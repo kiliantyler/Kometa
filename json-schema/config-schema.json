@@ -354,10 +354,12 @@
                     "type": "string"
                 }
             },
-            "required": [
-                "username",
-                "password"
-            ],
+            "dependencies": {
+                "client": ["version"],
+                "version": ["client"],
+                "username": ["password"],
+                "password": ["username"]
+            },
             "title": "anidb"
         },
         "sonarr-api": {
